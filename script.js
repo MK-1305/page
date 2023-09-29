@@ -1,8 +1,8 @@
-const image = document.querySelector('.image');
-const text = document.querySelector('.lyricks');
+const text = document.querySelector('.lyrics');
 const loading1 = document.querySelector('#loading');
 const loading2 = document.querySelector('#loading-screen');
 const loadingLogo = document.querySelector('.spinner');
+const gunya = document.querySelector('.gunya');
 
 
 // ロード画面
@@ -31,19 +31,6 @@ window.addEventListener('load', () => {
   }
 )
 
-// 写真
-image.animate(
-    {
-        opacity: [0,1]
-    },
-    {
-        duration: 5000,
-        delay: 200,
-        easing: 'ease',
-        fill: 'forwards',
-    }
-);
-
 // 文字
 text.animate(
     {
@@ -57,5 +44,22 @@ text.animate(
         fill: 'forwards',
     }
 );
+
+const keyframes = {
+    borderRadius: [
+        '79% 21% 54% 46% / 67% 55% 45% 33% ',
+        '79% 21% 13% 87% / 11% 33% 67% 89% ',
+        '20% 80% 13% 87% / 79% 33% 67% 21% ',
+        '59% 41% 76% 24% / 79% 15% 85% 21% ',
+    ],
+};
+
+const options = {
+    duration: 8000,
+    direction: 'alternate',
+    iterations: Infinity,
+};
+
+gunya.animate(keyframes, options);
 
 // intersectionobserverやる
